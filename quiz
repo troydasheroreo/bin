@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+import random
+import colors as c
+import quiz_questions as q
+import questions_troy as t
+
+score = 0 
+
+print(c.pink + '''
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+Welcome to the game of quiz!!!
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+''' +c.reset)
+
+print("Would you like Geography or Troy?")
+
+questions = [ q.q1, q.q2, q.q3, q.q4 ]
+
+while questions:
+    q.question = random.choice(questions)
+    points = q.question()
+    if points:
+        questions.remove(question)
+        score += points
+    else:
+        print("Disheartening, please try again")
+print('Well done. Your score is: ' + c.green + str(score) + c.reset)
