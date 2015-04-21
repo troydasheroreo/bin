@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+
+import random as r
+import colors as c
+
+die = [None]
+  
+die.append(
+'''
+.-------.
+|       |
+|   .   |
+|       |
+.-------.
+''')
+
+die.append(
+'''
+.-------.
+| .     |
+|       |
+|     . | 
+.-------.
+''')
+
+die.append(
+'''
+.-------.
+| .     |
+|   .   |
+|     . |
+.-------.
+''')
+
+die.append(
+'''
+.-------.
+| .   . |
+|       |
+| .   . |
+.-------.
+''')
+
+die.append(
+'''
+.-------.
+| .   . |
+|   .   |
+| .   . |
+.-------.
+''')
+
+die.append(
+'''
+.-------.
+| .   . |
+| .   . |
+| .   . |
+.-------.
+''')
+
+print(c.clear)
+
+    
+while True: 
+    dice_amount = input('How many dice? > ').strip() 
+    if not dice_amount:
+        dice_amount = last_dice_amount
+    elif dice_amount == 'stop':
+        exit()
+    else:
+        try:
+            dice_amount = int(dice_amount)
+        except ValueError: 
+            print("I'm sorry, please type a number")
+            exit(1)
+    last_dice_amount = dice_amount
+    print(c.clear)
+    for count in range(dice_amount):
+        roll = r.randint(1,6)
+        print(c.random_color() + die[roll].strip() + c.reset) 

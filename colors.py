@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 '''
 The colors
 '''
@@ -31,9 +31,11 @@ grey,
 gray,
 purple,
 white,
-turquoise]
+turquoise,
+reset,
+clear]
  
-def random():
+def random_color():
     return r.choice(colors)
 
 if __name__ == '__main__':

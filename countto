@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import time
+import sys
+import colors as c
+
+print(c.clear)
+if len(sys.argv) >= 2:
+    to = int(sys.argv[1])
+else:
+    print('usage: countto NUM')
+    exit(1)
+
+print(c.clear)
+print(c.white + 'Counting to ' + c.gray + str(to) + c.reset)
+    
+for count in range(to):
+    time.sleep(1)
+    print(c.pink + str(count + 1) + c.turquoise + ' seconds')

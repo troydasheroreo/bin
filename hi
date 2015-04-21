@@ -1,20 +1,8 @@
-#!/usr/bin/env python3 
+#!/usr/bin/env python 
 import random
 
-red = '\033[0;31m'
-orange = '\033[1:31m'
-pink = '\033[0;35m'
-yellow = '\033[0;33m'
-green = '\033[0;32m'
-blue = '\033[0;34m'
-black = '\033[0;30m'
-grey = '\033[1;34m'
-gray = '\033[1;32m'
-purple = '\033[1;35m'
-white = '\033[0;37m'
-turquoise = '\033[0;36m'
+import colors
 
-colors = [ red, orange, pink, yellow, green, blue, black, grey, gray, purple, white, turquoise ]
+firstname = input("What is your first name? > " + random.choice(colors))
 
-while True:
-    print(random.choice(colors) + 'Troll',end='')
+print(reset + "Hello, " + firstname + " ")

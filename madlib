@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+
+import colors as c
+
+page = {
+  'text': '''
+    As we {} the {} building, the {} tour guide {} at us,
+    "My name is {}, and I am from {}." I {} at my watch 
+    and saw that it was {}, I was late for my {}! I whispered
+    to {}, who had been {} behind me the whole time. It turns
+    out she was going to the same thing! We {} the tour 
+    guide how long until the end of the tour.
+    "{} {}" the guide said.
+    ''',
+
+    'words': [
+    'verb ending in ed',
+    'counting number (ex: first)',
+    'adjective',
+    'verb ending in ed',
+    'name',
+    'town',
+    'verb ending in ed',
+    'number',
+    'thing',
+    'girl\'s name',
+    'verb ending in ed',
+    'verb ending in ed',
+    'number',
+    'unit of measurement'
+  ]
+}
+
+print(c.clear)
+print(c.pink)
+
+print('''
+-~-~-~-~-~-~-~-~-~-
+''')
+print('''
+Welcome to Mad Libs
+''')
+print('''
+-~-~-~-~-~-~-~-~-~-
+''')
+print(c.reset)
+
+answers = []
+
+for word in page['words']:
+    answer = input(word + '> '+c.white).lower().strip()
+    answers.append(answer)
+    print(c.reset,end='')
+
+print(page['text'].format(*answers))
