@@ -1,8 +1,24 @@
-#!/usr/bin/env python 
-import random
+#!/usr/bin/env python3 
+import random as r
 
-import colors
+import colors as c
 
-firstname = input("What is your first name? > " + random.choice(colors))
+while True:
+    try:
+        firstname = input("What is your first name? >").strip().title()
+    except (KeyboardInterrupt, EOFError, IOError):
+        print(c.clear +"So sad to see you go")
+        break
+    if not firstname: 
+        break
+    else:
+        print(c.reset + "Hello, " + firstname + " ")
+        continue
+    
+    
 
-print(reset + "Hello, " + firstname + " ")
+
+
+
+
+

@@ -1,0 +1,6 @@
+def roll:
+    print("I would roll here")
+if __name__ == "__main__":
+    roll()
+    
+

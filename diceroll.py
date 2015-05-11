@@ -12,4 +12,4 @@ def roll(n, sides):
 if __name__ == '__main__':
     for count in range(20):
         print(roll(3,6))
-    print()
+    

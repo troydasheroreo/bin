@@ -4,4 +4,5 @@ import colors as c
 
 while True:
     for a in 'Hello World':
-        print(c.random() + a, end='')
+        print(c.random_color() + a, end='')
+        
