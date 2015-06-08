@@ -16,7 +16,7 @@ def parse_roll(text):
     amount, sides = text.split('d')
     return roll(int(amount), int(sides))
 if __name__ == "__main__":
-   for count in range(20):
+   #for count in range(20):
         #number = rolldie()
         #print(intnumber,end=" ")
     print(c.random_color(), end=' ')   
