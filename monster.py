@@ -1,7 +1,13 @@
 from dice import roll
 import colors as c
 
-class Monster():
+monsters = [
+"Elf",
+"Goblin",
+"Demon"
+]
+
+class HasStats():
     health = 100
     def __init__(self):
         self.strength = roll(5,6)
@@ -16,9 +22,26 @@ class Monster():
         Dexterity:      {s.dexterity:>2}
         Wisdom:         {s.wisdom:>2}
         """
-        print(text.format(s=self)) 
+        print(text.format(s=self))
+        
+class Elf(HasStats):
+    def __init__(self):
+        self.set_stats()
+        self.wisdom += 10
+        self.intelligence += 10
+class Goblin(HasStats):
+    def __init__(self):
+        self.set_stats()
+        self.constitution += 10
+class Demon(HasStats):
+    def __init__(self):
+        self.set_stats()
+        self.dexterity += 10
+        self.intelligence += 10
+        self.wisdom += 10
+       
 if __name__ == '__main__':
-    monster = Monster()
+    hasstats = HasStats()
     print(c.clear)
-    monster.show_stats()
+    hasstats.show_stats()
      
