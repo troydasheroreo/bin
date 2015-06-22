@@ -39,7 +39,27 @@ class Demon(HasStats):
         self.dexterity += 10
         self.intelligence += 10
         self.wisdom += 10
-       
+      
+def pick_monster():
+    count = 1
+    for monster in m.monsters:
+        print(count,monster)
+        count += 1
+    monster = random.choice(m.monsters)
+
+    if monster == "Elf":
+        self.monster = m.Elf()
+        self.monster.show_stats()
+
+    elif monster == "Goblin":
+        self.monster = m.Goblin()
+        self.monster.show_stats()
+
+    elif monster == "Demon":
+        self.monster = m.Demon()
+        self.monster.show_stats()
+
+
 if __name__ == '__main__':
     hasstats = HasStats()
     print(c.clear)
