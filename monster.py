@@ -39,7 +39,9 @@ class Demon(HasStats):
         self.dexterity += 10
         self.intelligence += 10
         self.wisdom += 10
-      
+     
+
+
 def pick_monster():
     count = 1
     for monster in m.monsters:
