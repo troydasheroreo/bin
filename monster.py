@@ -2,9 +2,9 @@ from dice import roll
 import colors as c
 
 monsters = [
-"Elf",
-"Goblin",
-"Demon"
+Elf,
+Goblin,
+Demon,
 ]
 
 class HasStats():
@@ -25,15 +25,20 @@ class HasStats():
         print(text.format(s=self))
         
 class Elf(HasStats):
+    title = "Elf Soldier"
     def __init__(self):
         self.set_stats()
         self.wisdom += 10
         self.intelligence += 10
+    def action_Elf(self):
+        print("Would have done an action")
 class Goblin(HasStats):
+    title = "Goblin Soldier"
     def __init__(self):
         self.set_stats()
         self.constitution += 10
 class Demon(HasStats):
+    title = "Belial"
     def __init__(self):
         self.set_stats()
         self.dexterity += 10
@@ -48,6 +53,7 @@ def pick_monster():
         print(count,monster)
         count += 1
     monster = random.choice(m.monsters)
+
 
     if monster == "Elf":
         self.monster = m.Elf()

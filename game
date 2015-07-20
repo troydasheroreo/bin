@@ -24,18 +24,35 @@ class Game():
                 exit()
             elif action in ['pick','choose','decide','repick','re-pick']:
                self.pick_monster()
+            elif action in ['bringit','battle','destroy','diediedie']:
+                self.handle_battle()
                
     
     def pick_monster(self):
         count = 1
         for monster in m.monsters:
-            print(count,monster)
+            pickstr = c.white + "{}. " + c.random_color() +"{}" + c.reset
+            print(pickstr.format(count,monster.title))
             count += 1
         number  = int(input().strip().lower())
-        monsters_name = m.monsters[number-1]
-        print("You picked monster, ",monsters_name) 
-            #self.monster.show_stats()
-            #TODO prompt monster selection
+        monsters_class = m.monsters[number-1]
+        monster = monster_class()
+        print("You picked {}:".format(monsters_name)) 
+        monster.show_stats()    
+    
+    def handle_battle(self):
+        while self.player.hp > 0 and self.monster.hp > 0:
+          self.player.pick_move()
+          if self.player.speed >= self.monster.speed:
+              self.player.do(move)
+              self.monster.do()
+          else:
+              self.monster.do()
+              self.player.do(move)
+        if self.player.hp > 0: #Congratulations on winning, my son
+            self.player.xp += self.monster.xp
+        else:
+            self.player.xp -= self.monster.xp
 
 
     def save(self):

@@ -5,7 +5,7 @@ import json
 
 
 class HasStats():
-    health = 100
+    hp = 100
     def set_stats(self):
         self.strength = roll(3,6)
         self.constitution = roll(3,6)
