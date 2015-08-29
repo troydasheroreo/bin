@@ -44,6 +44,6 @@ class HasStats():
             self.wisdom = j['wisdom']
             self.charisma = j['charisma']
         
-
+        
 
 

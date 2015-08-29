@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import colors as c
+import time
+
+sleep = 1
+count = 0
+
+while True:
+    for count in range(16):
+        binform = c.clear + c.yellow + '{}: {:04b}' + c.reset
+        print(binform.format(count,count))
+        time.sleep(sleep)

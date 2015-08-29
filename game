@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """The main game engine"""
 import colors as c
 import json
@@ -7,8 +8,10 @@ import random
 
 class Game():
     def __init__(self):
-        print('Welcome')
+        print(c.clear + 'Welcome')
         self.player = Player()
+        
+
         
 
     def run(self):
@@ -26,8 +29,8 @@ class Game():
                self.pick_monster()
             elif action in ['bringit','battle','destroy','diediedie']:
                 self.handle_battle()
-               
-    
+            elif action in ['use']   
+                self.handle_use()
     def pick_monster(self):
         count = 1
         for monster in m.monsters:
@@ -37,6 +40,7 @@ class Game():
         number  = int(input().strip().lower())
         monsters_class = m.monsters[number-1]
         monster = monster_class()
+        monster.game = self()
         print("You picked {}:".format(monsters_name)) 
         monster.show_stats()    
     
@@ -44,11 +48,11 @@ class Game():
         while self.player.hp > 0 and self.monster.hp > 0:
           self.player.pick_move()
           if self.player.speed >= self.monster.speed:
-              self.player.do(move)
-              self.monster.do()
+              self.player.move()
+              self.monster.move()
           else:
-              self.monster.do()
-              self.player.do(move)
+              self.monster.move()
+              self.player.move()
         if self.player.hp > 0: #Congratulations on winning, my son
             self.player.xp += self.monster.xp
         else:
