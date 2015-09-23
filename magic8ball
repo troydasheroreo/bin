@@ -27,10 +27,10 @@ answer = [
 while True:
     
     question = input ("What is your question?").strip().lower()
-    if question == ("what is the meaning of life?"):
+    if question == ("what is the meaning of life"):
         print("The magic 8-Ball does not answer questions of that nature.")
         break
-    elif question == ("who are you?"):
+    elif question == ("who are you"):
         print("I'm the Doctor")
         break
     else:
